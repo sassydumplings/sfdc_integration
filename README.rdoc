@@ -1,7 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is step by step guide I built a rake task to
+automate upload to Salesforce.com (SFDC)
+** It is only an example and is non-working **
+
+Gemfile:
+We will use 3 gems:
+* salesforce-bulk-api  (bulk upload to SFDC)
+* databasedotcom       (connection to SFDC instance and query)
+* rails-api            (not the full set of Rails features)
+
+
 
 Things you may want to cover:
 
