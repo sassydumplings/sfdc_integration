@@ -15,6 +15,9 @@ We will use 3 gems:
 API Stuff:
 Setup Application Controller to inherit from ActionController::API
 
+From http://www.emilsoman.com/blog/2013/05/18/building-a-tested/:
+This removes a lot of stuff Rails that you don't need for an API. This ensures that the API works for non-browser clients which do not support cookies. Also, there is no "View" layer that renders an HTML view for every request. This makes the response faster.
+
 Okay - now SFDC stuff
 
 1. Make connection to SFDC to work
