@@ -1,0 +1,11 @@
+# databasedotcom.yml
+#
+# need these variables moved to env file
+---
+
+client_secret: your_client_secret
+client_id: your_client_id
+
+# default host is login.salesforce.com
+# use :host to set up for SFDC Sandbox
+# Databasedotcom::Client.new :host => "test.salesforce.com", ...

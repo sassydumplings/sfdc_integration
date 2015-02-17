@@ -1,37 +1,51 @@
 == README
 
+Example Repo
+
 This repo is step by step guide I built a rake task to
-automate upload to Salesforce.com (SFDC)
+automate upload to Salesforce.com (SFDC) with Rails 4.2 Ruby 2.2
 ** It is only an example and is non-working **
 
 Gemfile:
 We will use 3 gems:
-* salesforce-bulk-api  (bulk upload to SFDC)
+* salesforce-bulk-api  (easy to implement bulk upload to SFDC)
 * databasedotcom       (connection to SFDC instance and query)
 * rails-api            (not the full set of Rails features)
 
+API Stuff:
+Setup Application Controller to inherit from ActionController::API
+
+Okay - now SFDC stuff
+
+1. Make connection to SFDC to work
+
+According to the salesforce-bulk-api there are two ways to authenticate
+- restforce gem (
+- databasedotcom gem
+
+databasedotcom was easy to set up authentication and the query returns objects (not soap response)
+
+Add a databasedotcom.yml with client_id and client secret. Define a host if you want to login to sandbox
+
+2. Set up field mapping
+
+config/initializers/field_mapping.rb
+
+Maps the json keys to SFDC fields
+
+3. Set up API call and format json file for upload to SFDC
+
+config/app/models/field_map.rb
 
 
-Things you may want to cover:
+4. Write the rake task
 
-* Ruby version
+lib/tasks/salesforce_integration.rake
 
-* System dependencies
+There are lots of example tutorials on how to write Rake tasks like:
+http://tutorials.jumpstartlab.com/topics/systems/automation.html
 
-* Configuration
+To run this task:
 
-* Database creation
+rake salesforce_integration:sync
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

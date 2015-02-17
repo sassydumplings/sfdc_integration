@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 ruby "2.2.0"
 
+# gem 'your-api-gem' #place holder for your api gem
 gem 'passenger'
 gem 'rails-api'
 
